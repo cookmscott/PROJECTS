@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contacts Example</title>
+    <link rel="stylesheet" href="master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for PhoneGap to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // PhoneGap is ready
+    //
+    function onDeviceReady() {
+        // find all contacts with 'Jane' in any name field
+        var options = new ContactFindOptions();
+        options.filter="Jane"; 
+        var fields = ["displayName", "name"];
+        navigator.contacts.find(fields
